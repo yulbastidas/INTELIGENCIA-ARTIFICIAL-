@@ -1,0 +1,27 @@
+# Archivos temporales de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Dependencias locales usadas durante pruebas
+.dependencias_pruebas/
+
+# Archivos de VS Code y Spyder
+.vscode/
+.spyproject/
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
+
+# Resultados temporales generados por la aplicación web
+resultados/web/
+
+# Caché de herramientas
+.pytest_cache/
+.mypy_cache/

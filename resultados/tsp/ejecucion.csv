@@ -1,0 +1,2 @@
+﻿numero_ciudades,poblacion,tasa_mutacion,tipo_mutacion,elitismo,max_generaciones,semilla,mejor_ruta,mejor_distancia,generacion_mejor,generaciones_ejecutadas,tiempo_segundos
+10,100,0.1,swap,2,500,42,"[1, 4, 6, 9, 7, 8, 5, 3, 0, 2]",329.31823027761055,12,500,5.714590399998997

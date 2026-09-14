@@ -1,0 +1,207 @@
+.stApp {
+    background:
+        radial-gradient(circle at 15% 20%, rgba(99,102,241,0.12), transparent 30%),
+        radial-gradient(circle at 85% 10%, rgba(168,85,247,0.10), transparent 28%),
+        #090c15;
+    color: #f8fafc;
+}
+
+.block-container {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    max-width: 1400px;
+}
+
+[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #101522 0%, #0b0f19 100%);
+    border-right: 1px solid rgba(255,255,255,0.08);
+}
+
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3 {
+    color: white;
+}
+
+.hero {
+    padding: 38px 42px;
+    border-radius: 24px;
+    background: linear-gradient(
+        135deg,
+        rgba(79,70,229,.95),
+        rgba(126,34,206,.92)
+    );
+    box-shadow: 0 20px 60px rgba(0,0,0,.35);
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero:before {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.08);
+    top: -120px;
+    right: -60px;
+}
+
+.hero-title {
+    font-size: 46px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: rgba(255,255,255,.86);
+    max-width: 850px;
+    line-height: 1.6;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 100px;
+    background: rgba(255,255,255,.15);
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.algorithm-card {
+    background: rgba(17,24,39,.75);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 20px;
+    padding: 25px;
+    min-height: 200px;
+    box-shadow: 0 8px 30px rgba(0,0,0,.20);
+    transition: all .25s ease;
+}
+
+.algorithm-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(139,92,246,.55);
+    box-shadow: 0 16px 40px rgba(0,0,0,.35);
+}
+
+.card-icon {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.card-title {
+    font-size: 21px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.card-description {
+    color: #aab4c5;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.metric-card {
+    background: rgba(17,24,39,.72);
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 17px;
+    padding: 18px;
+    text-align: center;
+}
+
+.metric-number {
+    font-size: 28px;
+    font-weight: 800;
+    color: #a78bfa;
+}
+
+.metric-label {
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+.result-card {
+    background: linear-gradient(
+        145deg,
+        rgba(17,24,39,.95),
+        rgba(13,18,30,.95)
+    );
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 18px;
+    padding: 20px;
+}
+
+.result-title {
+    color: #c4b5fd;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.result-value {
+    color: white;
+    font-size: 25px;
+    font-weight: 800;
+    margin-top: 3px;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 800;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.info-box {
+    background: rgba(99,102,241,.09);
+    border: 1px solid rgba(99,102,241,.25);
+    border-radius: 15px;
+    padding: 18px;
+    color: #cbd5e1;
+}
+
+div[data-baseweb="select"] > div {
+    background-color: #151b29;
+    border-radius: 12px;
+}
+
+.stButton > button {
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    padding: 11px 18px;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+    transition: all .2s ease;
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(99,102,241,.35);
+    color: white;
+}
+
+.custom-divider {
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(139,92,246,.5),
+        transparent
+    );
+    margin: 28px 0;
+}
+
+.footer {
+    text-align: center;
+    color: #64748b;
+    margin-top: 50px;
+    padding-bottom: 25px;
+    font-size: 13px;
+}

@@ -1,0 +1,5 @@
+﻿capacidad,metodo,repeticiones,mejor_valor,peor_valor,valor_promedio,desviacion_estandar_muestral,peso_promedio,generacion_promedio_mejor,tiempo_promedio_segundos
+30,penalizacion,10,422,422,422,0.0,30,14.9,4.145975779999207
+30,reparacion,10,422,422,422,0.0,30,1.6,5.5639074899998375
+45,penalizacion,10,552,552,552,0.0,45,25.3,4.1273374800002784
+45,reparacion,10,552,552,552,0.0,45,8.7,5.742110020000473
