@@ -1,0 +1,2 @@
+﻿capacidad,metodo,poblacion,tasa_mutacion,elitismo,max_generaciones,semilla,mejor_individuo,objetos_seleccionados,peso_total,valor_total,fitness,generacion_mejor,generaciones_ejecutadas,tiempo_segundos
+45,penalizacion,100,0.1,2,500,2026,"[1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1]","[""Laptop"", ""Cámara"", ""Tablet"", ""Botiquín"", ""Agua"", ""Alimentos"", ""Linterna"", ""Radio"", ""Batería"", ""GPS"", ""Cuaderno""]",45,552,552,9,500,7.887870799997472

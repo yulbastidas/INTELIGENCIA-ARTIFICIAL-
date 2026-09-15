@@ -37,4 +37,4 @@ Se compara el mejor resultado final de cada corrida, no todos los individuos. La
 
 No se calculó un óptimo exacto: mejor encontrada no significa óptima demostrada. Diez semillas por combinación y una instancia no permiten generalizar superioridad estadística. Misma semilla y versiones permiten repetir rutas e historiales; los tiempos dependen del equipo.
 
-convergencia.png, mejor_ruta.png y ejecucion.csv corresponden a la mejor corrida experimental al terminar este lote. Una ejecución individual posterior los actualiza; experimentos.csv e historiales.csv conservan el lote.
+Las figuras convergencia.png y mejor_ruta.png corresponden al caso individual guardado en ejecucion.csv e historial.csv: semilla 42, población 100, 500 generaciones, swap, tasa 0.10 y dos élites; distancia 329.31823027761055, generación de mejor resultado 12. No corresponde a una de las cuatro configuraciones experimentales (tasas 0.05 y 0.20). comparacion_mutaciones.png utiliza resumen.csv.

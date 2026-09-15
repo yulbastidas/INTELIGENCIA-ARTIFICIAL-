@@ -1,57 +1,39 @@
-# Resultados reales de la fase 1
+# N-Reinas — análisis verificado
 
-Se ejecutaron 180 corridas: 18 configuraciones por 10 semillas (2026..2035),
-elitismo 2 y máximo 500 generaciones. Hubo 170 éxitos (94.44 %) y 10 fracasos.
-Los CSV contienen las soluciones, tiempos y generaciones efectivamente medidas.
+## Diseño y resultados
+180 corridas: N=6 y N=8; poblaciones 50, 100 y 200; tasas 0.05, 0.10 y 0.20; diez semillas (2026–2035) por grupo, máximo 500 generaciones y dos élites.
+Se obtuvieron 170 soluciones sin conflictos (94.44%); los diez fracasos terminaron con un conflicto.
 
-| N | Población | Éxitos con 0.05 | Éxitos con 0.10 | Éxitos con 0.20 |
-|---|---|---|---|---|
-| 6 | 50 | 6/10 | 7/10 | 9/10 |
-| 6 | 100 | 10/10 | 10/10 | 10/10 |
-| 6 | 200 | 10/10 | 10/10 | 10/10 |
-| 8 | 50 | 8/10 | 10/10 | 10/10 |
-| 8 | 100 | 10/10 | 10/10 | 10/10 |
-| 8 | 200 | 10/10 | 10/10 | 10/10 |
+| N | Población | Mutación | Éxitos de 10 | Generación media de éxitos | Tiempo medio s |
+|---|---|---|---|---|---|
+| 6 | 50 | 0.05 | 6 | 1.67 | 0.671643 |
+| 6 | 50 | 0.1 | 7 | 1.43 | 0.477156 |
+| 6 | 50 | 0.2 | 9 | 44.44 | 0.300736 |
+| 6 | 100 | 0.05 | 10 | 1.70 | 0.014038 |
+| 6 | 100 | 0.1 | 10 | 1.70 | 0.012857 |
+| 6 | 100 | 0.2 | 10 | 15.40 | 0.110811 |
+| 6 | 200 | 0.05 | 10 | 0.80 | 0.015457 |
+| 6 | 200 | 0.1 | 10 | 0.70 | 0.012634 |
+| 6 | 200 | 0.2 | 10 | 0.80 | 0.016387 |
+| 8 | 50 | 0.05 | 8 | 46.50 | 0.583322 |
+| 8 | 50 | 0.1 | 10 | 11.80 | 0.049156 |
+| 8 | 50 | 0.2 | 10 | 5.00 | 0.023548 |
+| 8 | 100 | 0.05 | 10 | 2.00 | 0.019817 |
+| 8 | 100 | 0.1 | 10 | 3.40 | 0.036269 |
+| 8 | 100 | 0.2 | 10 | 1.90 | 0.021414 |
+| 8 | 200 | 0.05 | 10 | 1.20 | 0.023235 |
+| 8 | 200 | 0.1 | 10 | 1.00 | 0.021629 |
+| 8 | 200 | 0.2 | 10 | 1.50 | 0.032917 |
 
-Con población 50, aumentar la mutación mejoró la tasa de éxito observada. Para
-N=8, la generación media entre éxitos bajó de 46.5 a 11.8 y 5.0 al aumentar la
-tasa de 0.05 a 0.10 y 0.20. Para N=6, la tasa 0.20 logró rescatar corridas
-difíciles: su media entre éxitos fue 44.44 generaciones, frente a 1.67 con 0.05.
-La media menor de 0.05 no implica superioridad: excluye cuatro fracasos.
+La población 50 concentra todos los fracasos: para N=6, éxitos 6/10, 7/10 y 9/10 al aumentar la mutación; para N=8, 8/10, 10/10 y 10/10. Las poblaciones 100 y 200 alcanzan 10/10 en todos sus grupos. Esto describe estas semillas; no prueba que una población grande siempre garantice solución.
+La generación media se calcula sólo sobre los éxitos. Por ello 44.44 generaciones para N=6, población 50 y mutación 0.20 no se interpreta aisladamente como peor comportamiento que 1.67 con tasa 0.05: la primera configuración resuelve nueve casos y la segunda sólo seis. No se midió diversidad directamente.
 
-Las poblaciones de 100 y 200 alcanzaron el 100 % de éxito en esta muestra.
-Una población mayor ofrece más candidatos iniciales, pero evaluar una
-generación cuesta más. Las medias inferiores a una generación incluyen
-soluciones presentes en la población inicial (generación 0); no se deben
-atribuir únicamente a los operadores evolutivos.
+## Implementación
+Permutación de filas; índice = columna. Fitness = −conflictos por pares. Selección desde la mejor mitad; cruce de un punto con reparación de duplicados; mutación swap por individuo; reemplazo con élites. Parada al alcanzar cero o el máximo. Guardar mejor histórico no equivale a elitismo.
 
-Los diez fracasos conservaron un tablero con un conflicto. Esto es compatible
-con pérdida de diversidad por selección de los mejores y elitismo. No se midió
-diversidad directamente, por lo que esa explicación es una interpretación,
-no una causa demostrada. No se modificó el algoritmo para ocultar fracasos.
+## Evidencia gráfica actual
+convergencia.png y tablero.png corresponden a ejecucion.csv e historial.csv: N=8, población 100, mutación 0.10, élites 2 y semilla 42; solución [2,6,1,7,5,3,0,4], cero conflictos en generación 4. Es una ejecución representativa adicional, no una fila nueva de experimentos.csv.
+comparacion_parametros.png se calculó directamente de resumen.csv. Todos los historiales experimentales están en historiales.csv. No se regeneraron 180 PNG individuales porque duplicarían evidencia disponible.
 
-Una prueba individual N=8, población 100, mutación 0.10 y semilla 42 encontró
-`[2, 6, 1, 7, 5, 3, 0, 4]`, sin conflictos, en generación 4. Después, la prueba
-del menú con población 20 y límite 10 sobrescribió los archivos individuales
-con un ejemplo de fracaso controlado (un conflicto). Los experimentos se
-conservan separados en `experimentos.csv` y `historiales.csv`.
-
-## Verificación
-
-- Cuatro pruebas unittest aprobadas, incluyendo 400 ensayos de operadores.
-- Compilación de todos los archivos Python nuevos sin errores de sintaxis.
-- Imports del menú, algoritmo, experimentos y visualización correctos.
-- Menú probado con entradas simuladas: gráfica sin ejecución previa,
-  ejecución configurable, guardado y salida.
-- 180 cromosomas comprobados como permutaciones válidas y conflictos
-  recalculados independientemente de los valores guardados.
-- 180 PNG experimentales generadas; gráfica individual revisada visualmente.
-- SHA-256 de los originales idénticos antes y después:
-  - nreinas.py: `2ACC719B4B3CD25D2E54B24DFF34A719A84B661F903E95099B3ACDCD137B8944`
-  - taller_ia_geneticos.pdf: `9B1321C8E388FBE9CC26C1E8E8DFF3DE3B3F48164086E6D0F4A410063B3786E0`
-
-Entorno de los experimentos: Python 3.12, NumPy 2.5.3 y Matplotlib 3.11.2.
-La interfaz de Spyder no se abrió; la compatibilidad se basa en Python normal,
-imports de paquete y rutas respecto a los archivos. Los tiempos dependen del
-equipo y su carga, y diez semillas no bastan para asegurar superioridad
-estadística general. La siguiente fase es TSP; no se implementó en esta entrega.
+## Límites
+El fitness negativo se maximiza; las gráficas muestran conflictos, que se minimizan. Cero certifica ausencia de ataques, no una garantía de éxito del algoritmo en cualquier corrida. Los tiempos excluyen exportación. Los 180 experimentos completos se conservaron; sólo se regeneró el caso representativo y se corrigió la documentación obsoleta.

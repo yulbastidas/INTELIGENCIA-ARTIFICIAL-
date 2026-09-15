@@ -46,3 +46,7 @@ Conceptualmente, penalizar mantiene los cromosomas originales y es sencillo, per
 Se completan 500 reemplazos y 501 evaluaciones contando generación 0. No hay parada por valor objetivo ni óptimo exacto calculado. La generación del mejor se refiere a su primera aparición. El historial muestra mejor valor válido acumulado, incluso si no sobrevive sin elitismo. Los tiempos excluyen CSV y PNG. Desviación muestral usa divisor n-1. Diez semillas por combinación y una instancia no establecen superioridad estadística general.
 
 Al finalizar el lote, ejecucion.csv y las gráficas individuales muestran la corrida de mayor valor del lote; comparar métodos siempre dentro de cada capacidad. Una ejecución individual posterior actualiza esos archivos. Los CSV experimentales conservan el lote. No se modifica ningún resultado de las fases anteriores.
+
+## Evidencia representativa verificada
+
+Se regeneró el caso capacidad 45, penalización, semilla 2026, población 100, 500 generaciones, tasa 0.1 y dos élites. Reproduce cromosoma, peso 45, valor 552 y generación 9 de la corrida experimental correspondiente. Su nuevo tiempo real figura sólo en ejecucion.csv; los tiempos experimentales originales permanecen en experimentos.csv. historial.csv, convergencia.png y objetos_seleccionados.png pertenecen a ese caso.

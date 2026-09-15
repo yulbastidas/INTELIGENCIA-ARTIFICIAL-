@@ -31,3 +31,7 @@ Elitismo copia individuos a la siguiente población; guardar el mejor histórico
 Desviación muestral: divisor n-1. La generación media incluye todas las corridas, también fracasos; debe interpretarse con la tasa de éxito. Tiempo excluye CSV y gráficas. Diez semillas por variante y una instancia no permiten generalizar superioridad estadística. No se ha probado la interfaz de Spyder desde este entorno.
 
 El horario y las gráficas individuales representan la mejor corrida del lote al terminar los experimentos. Una ejecución individual posterior los actualiza sin cambiar experimentos.csv. Los resultados de N-Reinas y TSP no se escriben.
+
+## Regeneración controlada
+
+Las veinte corridas se volvieron a ejecutar con los parámetros y semillas originales. Los historiales coinciden exactamente con los anteriores y los resúmenes coinciden salvo tiempos. Nuevos tiempos medios reales: 0.805445 s sin elitismo y 0.781400 s con elitismo. Sin elitismo alcanzó cero en menor generación media, mientras que con elitismo tuvo un tiempo medio ligeramente menor en esta ejecución. No se infiere una ventaja estable de tiempo: depende del entorno. El horario y las figuras individuales corresponden a la corrida 1, semilla 2026, elitismo 0, generación 13.
